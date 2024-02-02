@@ -42,16 +42,20 @@ const ProductList = () => {
 
   return (
     <div className='beatslist'>
-      {/* <div style={{border:"5px dotted black", height:"300px", width:"250px", position:"relative"}}> */}
-        {/* <div style={{background:"grey", height:"70%"}}>image</div> */}
-        {/* <div id='cart'>cart</div> */}
-        {/* <div id='ratings'> */}
-          {/* <div id='ratingBackground'>Rating</div> */}
-          {/* <div id='stars'>RATING</div> */}
-        {/* </div> */}
-        {/* <div id='productName'>Razer Kraken Tournament Edition</div> */}
-      {/* </div> */}
 
+
+      {/* structure of the card */} 
+      <div style={{border:"5px dotted black", height:"300px", width:"250px", position:"relative"}}>
+        <div style={{background:"grey", height:"70%"}}>
+          image
+        </div>
+        <div id='cart'>cart</div>
+        <div id='ratings'>
+          <div id='ratingBackground'>Rating</div>
+          <div id='stars'>RATING</div>
+        </div>
+        <div id='productName'>Razer Kraken Tournament Edition</div>
+      </div>
 
 
       {/* <div style={{position:"absolute", top:"10px", right:"10px"}}>

@@ -235,6 +235,8 @@ body::-webkit-scrollbar {
   overflow: scroll;
   display: flex;
   flex-wrap: wrap;
+
+  justify-content: space-evenly;
 }
 
 .addToCart{
@@ -264,7 +266,7 @@ body::-webkit-scrollbar {
 }
 
 #ratings {
-  border: 1px double grey;
+  /* border: 1px double grey; */
   width: 100%;
   justify-content: center;
   display: flex;
@@ -287,9 +289,16 @@ body::-webkit-scrollbar {
 }
 
 #productName {
-  font-size: 26px;
-  background-color: #78e9ff;
+  font-size: 16px;
+  /* background-color: #78e9ff; */
   position: absolute;
   bottom: 0;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30%;
+  width: 100%;
+  overflow: scroll;
 }
