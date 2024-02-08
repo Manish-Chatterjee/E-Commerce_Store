@@ -228,7 +228,6 @@ body::-webkit-scrollbar {
 }
 
 .beatslist{
-  border: 1px solid black;
   margin: 30px;
   padding: 20px;
   height: 90vh;
@@ -237,6 +236,10 @@ body::-webkit-scrollbar {
   flex-wrap: wrap;
 
   justify-content: space-evenly;
+}
+
+.beatslist::-webkit-scrollbar {
+  display: none;
 }
 
 .addToCart{
@@ -253,7 +256,7 @@ body::-webkit-scrollbar {
 }
 
 #cart {
-  background-color: #78e9ff;
+  background: linear-gradient(120deg, #f8ff91, #ffa748);
   width: 100px;
   height: 50px;
   border-radius: 50px;
@@ -300,5 +303,51 @@ body::-webkit-scrollbar {
 
   height: 30%;
   width: 100%;
-  overflow: scroll;
+}
+
+.btn-close {
+  background-color: #171717;
+  color: wheat;
+}
+
+.cart {
+  padding-bottom: 10px;
+}
+
+.cart li {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart li img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.cart li span {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#quantity {
+  display: grid;
+}
+
+#title {
+  width: 220px;
+}
+
+#cartButton {
+  width: 100px;
+  height: 50px;
+  background: none;
+  padding: 10px;
+  border-radius: 50px;
 }

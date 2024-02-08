@@ -12,7 +12,7 @@ const Main = () => {
       <Logitech/>
       <Razer/>
 
-      <Link href='/ProductList' className='redirect'><FaChevronRight/></Link>
+      <Link href='/Products' className='redirect'><FaChevronRight/></Link>
     </div>
   )
 }
