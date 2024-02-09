@@ -5,26 +5,29 @@ import { IoCloseSharp } from "react-icons/io5";
 import CloseButton from 'react-bootstrap/CloseButton';
 import Image from 'next/image';
 import Quantity from './Quantity';
+import { ButtonGroup } from 'react-bootstrap';
+import OrderConfirmed from './OrderConfirmed'
+import Products from '../pages/Products'
 
 function OffCanvasExample({ name, ...props }) {
   const [show, setShow] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   return (
     <>
-      <Button id="cartButton" onClick={handleShow} className="me-2">
+      <Button id="cartButtonCorner" onClick={handleShow} className="me-2">
         {name}
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header>
           <Offcanvas.Title>My Cart</Offcanvas.Title>
-          {/* <Button variant='outline-dark' id='closeButton'><IoCloseSharp /></Button> */}
+          <Button variant='outline-dark' id='closeButton' onClick={handleClose}><IoCloseSharp /></Button>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {/* Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc. */}
 
           {props.data.map((product) => {
             return(
@@ -43,6 +46,20 @@ function OffCanvasExample({ name, ...props }) {
               </div>
             )
           })}
+
+          {props.data.length === 0 ?  <p id='emptyCartText'>Your cart is empty</p> :
+            <div className='orderButton'>
+            <Button id='orderButton' onClick={() => setModalShow(true)}>
+              Order Now
+            </Button>
+
+            <OrderConfirmed
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
+          </div>
+          }
+          
 
         </Offcanvas.Body>
       </Offcanvas>

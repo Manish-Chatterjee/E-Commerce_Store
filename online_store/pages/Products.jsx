@@ -6,7 +6,7 @@ import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import AddedNotify from '../component/AddedNotify';
 
-function App() {
+function Products() {
   const [articles, setArticles] = useState([]);
   const [cart, setCart] = useState([]);
 
@@ -20,12 +20,6 @@ function App() {
     fetchData();
   }, []);
 
-  // pushing data into cart array using set function
-  // const addToCart = (article) => {
-  //   // console.log(article,'article')
-  //   // setCart(article);
-  //   setCart(() => [...cart, article]);
-  // }
 
   const addToCart = (article) => {
     // Check if the product already exists in the cart
@@ -66,8 +60,8 @@ function App() {
             ))}
 
 
-        <div style={{position:"absolute", top:"10px", right:"10px"}}>
-        <Cart data={cart}/>
+        <div id='goToCart'>
+          <Cart data={cart}/>
         </div>
         </div>
       </ul>
@@ -75,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default Products;
