@@ -7,11 +7,15 @@ import { FaChevronRight } from "react-icons/fa";
 import Image from 'next/image';
 
 const Logitech = () => {
+
+  const width = window.innerWidth;
+
   return (
     <div className='razer' id='razer'>
       {/* <div className='redirect'>
       <FaChevronRight />
       </div> */}
+      {width > 1000 ? 
       <div className='music'>
         <Image
         src={poison}
@@ -23,6 +27,8 @@ const Logitech = () => {
         <IoPlayForward />
         </div>
       </div>
+      : null}
+
       <div id='razerText'>
         <text>RAZER</text>
         <Image

@@ -27,36 +27,9 @@ export default function AddedNotify() {
           Top-Center
         </Button>
       </Box>
-      <Grid container justifyContent="center">
-        <Grid item xs={6}>
-          <Button onClick={handleClick({ vertical: 'top', horizontal: 'left' })}>
-            Top-Left
-          </Button>
-        </Grid>
-        <Grid item xs={6} textAlign="right">
-          <Button onClick={handleClick({ vertical: 'top', horizontal: 'right' })}>
-            Top-Right
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button onClick={handleClick({ vertical: 'bottom', horizontal: 'left' })}>
-            Bottom-Left
-          </Button>
-        </Grid>
-        <Grid item xs={6} textAlign="right">
-          <Button onClick={handleClick({ vertical: 'bottom', horizontal: 'right' })}>
-            Bottom-Right
-          </Button>
-        </Grid>
-      </Grid>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Button onClick={handleClick({ vertical: 'bottom', horizontal: 'center' })}>
-          Bottom-Center
-        </Button>
-      </Box>
     </React.Fragment>
   );
-console.log('in added..!!')
+
   return (
     <Box sx={{ width: 500 }}>
       {buttons}
@@ -64,7 +37,7 @@ console.log('in added..!!')
         anchorOrigin={{ vertical, horizontal }}
         open={open}
         onClose={handleClose}
-        message="I love snacks"
+        message="Added"
         key={vertical + horizontal}
       />
     </Box>

@@ -38,8 +38,9 @@ function OffCanvasExample({ name, ...props }) {
                     <span id='title'>{product.title}</span>
                     <span id='quantity'>
                       <p>Quantity</p>
-                      <p>{product.quantity}</p>
-                      {/* <Quantity  quantity={product.quantity} id={product.id}/> */}
+                      {/* <p>{product.quantity}</p> */}
+                      <Quantity  quantity={product.quantity} id={product.id}/>
+                      
                     </span>
                   </li>
                 </ul>

@@ -7,6 +7,9 @@ import { FaChevronRight } from "react-icons/fa";
 import Image from 'next/image';
 
 const Logitech = () => {
+
+  const width = window.innerWidth;
+
   return (
     <div className='logitech' id='logitech'>
       {/* <div className='redirect'>
@@ -19,6 +22,8 @@ const Logitech = () => {
       className='headphoneImage'
       />
       </div>
+
+      {width > 1000 ?
       <div className='music'>
         <Image
         src={nightLife}
@@ -30,6 +35,7 @@ const Logitech = () => {
         <IoPlayForward />
         </div>
       </div>
+      : null}
     </div>
   )
 }

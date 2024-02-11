@@ -8,21 +8,26 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Beats = () => {
+
+const width = window.innerWidth;
+console.log(width,'width')
+
   return (
     <div className='beats' id='beats'>
     
-        
-      <div className='music'>
-        <Image
-        src={hallucination}
-        width={350}
-        />
-        <div className='playButton'>
-        <IoPlayBack />
-        <FaRegCirclePlay style={{fontSize:"50px"}}/>
-        <IoPlayForward />
-        </div>
-      </div>
+      {width > 1000 ? 
+        <div className='music'>
+          <Image
+          src={hallucination}
+          width={350}
+          />
+          <div className='playButton'>
+          <IoPlayBack />
+          <FaRegCirclePlay style={{fontSize:"50px"}}/>
+          <IoPlayForward />
+          </div>
+        </div> 
+      : null}
       <div id='beatText'>
         <text>BEATS</text>
         <Image
