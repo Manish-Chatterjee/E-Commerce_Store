@@ -1,21 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import poison from '../../public/images/poison.jpg'
 import razer from '../../public/images/razer.png'
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { FaChevronRight } from "react-icons/fa";
 import Image from 'next/image';
+import WindowSize from '../WindowSize'
 
 const Logitech = () => {
 
-  const width = window.innerWidth;
+  const [dimensionWidth,setDimensionWidth] = useState();
+const [dimensionHeight,setDimensionHeight] = useState();
+
+const handleCallback = (size) => {
+  console.log(size.width,'h & w');
+  setDimensionWidth(size.width);
+  setDimensionHeight(size.height);
+}
 
   return (
     <div className='razer' id='razer'>
+      <WindowSize onCallback={handleCallback}/>
       {/* <div className='redirect'>
       <FaChevronRight />
       </div> */}
-      {width > 1000 ? 
+      {dimensionWidth > 1000 ? 
       <div className='music'>
         <Image
         src={poison}

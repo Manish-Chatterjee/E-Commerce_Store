@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import nightLife from '../../public/images/NightSky.jpg'
 import logitech from '../../public/images/logitech.png'
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { FaChevronRight } from "react-icons/fa";
 import Image from 'next/image';
+import WindowSize from '../WindowSize'
 
 const Logitech = () => {
 
-  const width = window.innerWidth;
+  const [dimensionWidth,setDimensionWidth] = useState();
+const [dimensionHeight,setDimensionHeight] = useState();
+
+const handleCallback = (size) => {
+  console.log(size.width,'h & w');
+  setDimensionWidth(size.width);
+  setDimensionHeight(size.height);
+}
 
   return (
     <div className='logitech' id='logitech'>
+      <WindowSize onCallback={handleCallback}/>
       {/* <div className='redirect'>
       <FaChevronRight />
       </div> */}
@@ -23,7 +32,7 @@ const Logitech = () => {
       />
       </div>
 
-      {width > 1000 ?
+      {dimensionWidth > 1000 ?
       <div className='music'>
         <Image
         src={nightLife}

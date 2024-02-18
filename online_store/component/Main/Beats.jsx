@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import hallucination from '../../public/images/hallucination.jpg'
 import beats from '../../public/images/beats.png'
 import { FaRegCirclePlay } from "react-icons/fa6";
@@ -6,16 +6,26 @@ import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { Button, Nav, NavLink } from 'react-bootstrap';
 import Image from 'next/image';
 import Link from 'next/link';
+import WindowSize from '../WindowSize'
 
 const Beats = () => {
 
-const width = window.innerWidth;
-console.log(width,'width')
+
+const [dimensionWidth,setDimensionWidth] = useState();
+const [dimensionHeight,setDimensionHeight] = useState();
+
+const handleCallback = (size) => {
+  console.log(size.width,'h & w');
+  setDimensionWidth(size.width);
+  setDimensionHeight(size.height);
+}
 
   return (
     <div className='beats' id='beats'>
+
+    <WindowSize onCallback={handleCallback}/>
     
-      {width > 1000 ? 
+      {dimensionWidth > 1000 ? 
         <div className='music'>
           <Image
           src={hallucination}
