@@ -5,6 +5,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import AddedNotify from '../component/AddedNotify';
+import logo from '../public/images/image.png'
 
 function Products() {
   const [articles, setArticles] = useState([]);
@@ -37,6 +38,18 @@ function Products() {
 
   return (
     <div>
+
+    <div className='header'>
+      <Image
+      src={logo}
+      alt="Banner Image"
+      className='logo'
+      height={55}
+      width={55}
+      />
+      <p id='logoName'>Daily Deals</p>
+    </div>
+
       <ul>
         <div className='beatslist'>
 
