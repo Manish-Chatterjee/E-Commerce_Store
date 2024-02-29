@@ -14,10 +14,10 @@ export default function Quantity(props) {
 
   function decrement() {
     setCount(function (prevCount) {
-      if (prevCount > 0) {
+      if (prevCount > 1) {
         return (prevCount -= 1); 
       } else {
-        return (prevCount = 0);
+        return (prevCount = 1);
       }
     });
   }
@@ -26,7 +26,6 @@ export default function Quantity(props) {
     <div style={{display:"flex", alignItems:"center"}}>
       <Button id="decrement" onClick={decrement}>-</Button>
       <h1>{count}</h1>
-      {console.log(count,'count')}
       <Button id="increment" onClick={increment}>+</Button>
     </div>
   );

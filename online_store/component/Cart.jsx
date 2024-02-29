@@ -16,6 +16,16 @@ function OffCanvasExample({ name, ...props }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [data , setData] = useState([]);
+
+  useEffect(() => {
+    setData(props.data)
+  },[props]);
+
+
+  const handleButton = () => {
+    setModalShow(true);
+  };
 
   return (
     <>
@@ -29,7 +39,7 @@ function OffCanvasExample({ name, ...props }) {
         </Offcanvas.Header>
         <Offcanvas.Body>
 
-          {props.data.map((product) => {
+          {data?.map((product) => {
             return(
               <div className='cart'>
                 <ul>
@@ -48,9 +58,10 @@ function OffCanvasExample({ name, ...props }) {
             )
           })}
 
-          {props.data.length === 0 ?  <p id='emptyCartText'>Your cart is empty</p> :
+          {data?.length === 0 ?  <p id='emptyCartText'>Your cart is empty</p> :
             <div className='orderButton'>
-            <Button id='orderButton' onClick={() => setModalShow(true)}>
+            {/* <Button id='orderButton' onClick={() => {setModalShow(true) && clearCart}}> */}
+            <Button id='orderButton' onClick={handleButton}>
               Order Now
             </Button>
 
@@ -60,7 +71,6 @@ function OffCanvasExample({ name, ...props }) {
             />
           </div>
           }
-          
 
         </Offcanvas.Body>
       </Offcanvas>

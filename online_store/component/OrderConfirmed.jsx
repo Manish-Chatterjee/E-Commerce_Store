@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 
 function OrderConfirmed(props) {
 
-  const router = useRouter();
-  // Force refresh the page
-  const handleReload = () => {
-    router.reload();
-  };
+  // const router = useRouter();
+  // // Force refresh the page
+  // const handleReload = () => {
+  //   router.reload();
+  // };
 
   return (
     <Modal
@@ -25,7 +25,9 @@ function OrderConfirmed(props) {
                 <p>Order Confirmed</p>
                 <Lottie animationData={Confirmed} loop={false} id='confirmedAnimation'/>
             </div>
-            <Button id='closeOrderBtn' onClick={props.onHide && handleReload}>Close</Button>
+            <Button id='closeOrderBtn' onClick={props.onHide
+              //  && handleReload
+               }>Close</Button>
         </div>
       </Modal.Body>
     </Modal>
