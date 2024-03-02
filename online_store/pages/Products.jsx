@@ -11,6 +11,8 @@ function Products() {
   const [articles, setArticles] = useState([]);
   const [cart, setCart] = useState([]);
 
+  // const [addedNotify, setAddedNotify] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch('https://fakestoreapi.com/products');
@@ -29,12 +31,17 @@ function Products() {
     if (existingProduct) {
       // If the product already exists, increment its quantity
       setCart(cart.map((item) => (item.id === article.id ? { ...item, quantity: item.quantity + 1 } : item)));
-    } else {
+    } 
+    else {
       // If the product doesn't exist, add it to the cart
       setCart([...cart, { ...article, quantity: 1 }]);
-      // <AddedNotify/>
     }
   }
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
 
   return (
     <div>
@@ -61,7 +68,9 @@ function Products() {
                     <div style={{height:"70%", display:"flex", justifyContent:"center"}}>
                         <Image src={article.image} alt='image' width={100} height={100} style={{height:"auto", width:"auto", padding:"20px"}}/>
                     </div>
-                    <div id='cart'><button onClick={() => addToCart(article)} article={article}><TiShoppingCart id='cartButton'/></button></div>
+                    <div id='cart'>
+                      <button onClick={() => addToCart(article)} article={article}><AddedNotify/></button>
+                    </div>
                     <div id='ratings'>
                     {/* <div id='ratingBackground'>Rating</div> */}
                     {/* <div id='stars'>{article.rating.rate}</div> */}
@@ -74,7 +83,7 @@ function Products() {
 
 
         <div id='goToCart'>
-          <Cart data={cart}/>
+          <Cart data={cart} onClearCart={clearCart}/>
         </div>
         </div>
       </ul>

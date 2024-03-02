@@ -6,11 +6,12 @@ import { useRouter } from 'next/router';
 
 function OrderConfirmed(props) {
 
-  // const router = useRouter();
-  // // Force refresh the page
-  // const handleReload = () => {
-  //   router.reload();
-  // };
+  // console.log(props,'props15')
+
+  const handleClose = () => {
+    props.onHide();
+    props.onClearCart();
+  }
 
   return (
     <Modal
@@ -18,6 +19,7 @@ function OrderConfirmed(props) {
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      backdrop="static"
     >
       <Modal.Body>
         <div className='orderPopup'>
@@ -25,9 +27,7 @@ function OrderConfirmed(props) {
                 <p>Order Confirmed</p>
                 <Lottie animationData={Confirmed} loop={false} id='confirmedAnimation'/>
             </div>
-            <Button id='closeOrderBtn' onClick={props.onHide
-              //  && handleReload
-               }>Close</Button>
+            <Button id='closeOrderBtn' onClick={handleClose}>Close</Button>
         </div>
       </Modal.Body>
     </Modal>

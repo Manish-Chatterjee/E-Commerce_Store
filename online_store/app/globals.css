@@ -345,6 +345,8 @@ body::-webkit-scrollbar {
   background: none;
   padding: 10px;
   border-radius: 50px;
+
+  color: #2e2e2e;
 }
 
 .offcanvas-header {

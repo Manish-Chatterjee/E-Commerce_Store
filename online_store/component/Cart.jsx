@@ -9,23 +9,39 @@ import { ButtonGroup } from 'react-bootstrap';
 import OrderConfirmed from './OrderConfirmed'
 import Products from '../pages/Products'
 
-function OffCanvasExample({ name, ...props }) {
+function OffCanvasExample({ name, onClearCart, ...props }) {
   const [show, setShow] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [data , setData] = useState([]);
+  // const [data , setData] = useState([]);
+
+  // useEffect(() => {
+  //   const addedData = props.data
+  //   setData(addedData)
+  //   console.log(addedData,'data14')
+  // },[props]);
+
+
+
+  // const handleButton = () => {
+  //   // setData([]); // reset data to an empty array
+  //   console.log("cleared");
+  //   setModalShow(true);
+  //   onClearCart();
+  // };
 
   useEffect(() => {
-    setData(props.data)
-  },[props]);
+    // console.log(modalShow);
+  }, [modalShow]);
 
-
-  const handleButton = () => {
+  const handleButtonClick = () => {
     setModalShow(true);
   };
+
 
   return (
     <>
@@ -39,7 +55,7 @@ function OffCanvasExample({ name, ...props }) {
         </Offcanvas.Header>
         <Offcanvas.Body>
 
-          {data?.map((product) => {
+          {props.data?.map((product) => {
             return(
               <div className='cart'>
                 <ul>
@@ -58,16 +74,17 @@ function OffCanvasExample({ name, ...props }) {
             )
           })}
 
-          {data?.length === 0 ?  <p id='emptyCartText'>Your cart is empty</p> :
+          {props.data?.length === 0 ?  <p id='emptyCartText'>Your cart is empty</p> :
             <div className='orderButton'>
             {/* <Button id='orderButton' onClick={() => {setModalShow(true) && clearCart}}> */}
-            <Button id='orderButton' onClick={handleButton}>
+            <Button id='orderButton' onClick={handleButtonClick}>
               Order Now
             </Button>
 
             <OrderConfirmed
               show={modalShow}
               onHide={() => setModalShow(false)}
+              onClearCart={onClearCart}
             />
           </div>
           }
@@ -78,14 +95,14 @@ function OffCanvasExample({ name, ...props }) {
   );
 }
 
-function Cart({data}) {
+function Cart({data, onClearCart}) {
 
   return (
     <div>
       {/* {['end'].map((placement, idx) => (
         <OffCanvasExample key={idx} placement={placement} name="Cart" />
       ))} */}
-      <OffCanvasExample placement="end" name="Cart" data={data} key={data.id}/>
+      <OffCanvasExample placement="end" name="Cart" data={data} key={data.id} onClearCart={onClearCart}/>
     </div>
   );
 }

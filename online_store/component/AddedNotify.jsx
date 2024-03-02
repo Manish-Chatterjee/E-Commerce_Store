@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
+import { TiShoppingCart } from "react-icons/ti";
 
 export default function AddedNotify() {
   const [state, setState] = React.useState({
@@ -22,16 +23,17 @@ export default function AddedNotify() {
 
   const buttons = (
     <React.Fragment>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Button onClick={handleClick({ vertical: 'top', horizontal: 'center' })}>
-          Top-Center
+      <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+        <Button onClick={handleClick({ vertical: 'top', horizontal: 'center' })} style={{background:"none"}}>
+          {/* Top-Center */}
+          <TiShoppingCart id='cartButton'/>
         </Button>
       </Box>
     </React.Fragment>
   );
 
   return (
-    <Box sx={{ width: 500 }}>
+    <Box sx={{ width: 500}}>
       {buttons}
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
@@ -39,6 +41,7 @@ export default function AddedNotify() {
         onClose={handleClose}
         message="Added"
         key={vertical + horizontal}
+        autoHideDuration={500}
       />
     </Box>
   );
