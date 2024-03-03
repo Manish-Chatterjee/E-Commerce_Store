@@ -17,26 +17,7 @@ function OffCanvasExample({ name, onClearCart, ...props }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const [data , setData] = useState([]);
 
-  // useEffect(() => {
-  //   const addedData = props.data
-  //   setData(addedData)
-  //   console.log(addedData,'data14')
-  // },[props]);
-
-
-
-  // const handleButton = () => {
-  //   // setData([]); // reset data to an empty array
-  //   console.log("cleared");
-  //   setModalShow(true);
-  //   onClearCart();
-  // };
-
-  useEffect(() => {
-    // console.log(modalShow);
-  }, [modalShow]);
 
   const handleButtonClick = () => {
     setModalShow(true);

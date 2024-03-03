@@ -2,11 +2,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Confirmed from '../public/Confirmed.json'
 import Lottie from 'lottie-react';
-import { useRouter } from 'next/router';
 
 function OrderConfirmed(props) {
 
-  // console.log(props,'props15')
 
   const handleClose = () => {
     props.onHide();

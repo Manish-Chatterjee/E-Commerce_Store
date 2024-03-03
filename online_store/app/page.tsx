@@ -8,8 +8,6 @@ import './globals.css'
 function page() {
   return (
     <div className="App">
-      {/* <CategoryBar/> */}
-      {/* <Main/> */}
       <Products/>
     </div>
   );
