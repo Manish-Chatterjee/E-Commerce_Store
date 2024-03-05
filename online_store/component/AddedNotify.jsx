@@ -39,9 +39,9 @@ export default function AddedNotify() {
         anchorOrigin={{ vertical, horizontal }}
         open={open}
         onClose={handleClose}
-        message="Added"
+        message="Added to cart"
         key={vertical + horizontal}
-        autoHideDuration={500}
+        autoHideDuration={800}
       />
     </Box>
   );

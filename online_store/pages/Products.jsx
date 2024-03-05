@@ -6,10 +6,14 @@ import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import AddedNotify from '../component/AddedNotify';
 import logo from '../public/images/image.png'
+import Quantity from '@/component/Quantity';
+import Lottie from "lottie-react";
+import CartLoading from '../app/cartLoading.json'
 
 function Products() {
   const [articles, setArticles] = useState([]);
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   // const [addedNotify, setAddedNotify] = useState(false);
 
@@ -18,6 +22,7 @@ function Products() {
       const result = await fetch('https://fakestoreapi.com/products');
       const data = await result.json();
       setArticles(data);
+      setLoading(false); // Set loading to false once data is fetched
     };
 
     fetchData();
@@ -38,6 +43,10 @@ function Products() {
     }
   }
 
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
   const clearCart = () => {
     setCart([]);
   };
@@ -45,48 +54,53 @@ function Products() {
 
   return (
     <div>
+    {loading ? <div id='loading'><Lottie animationData={CartLoading} loop={true}/></div> : // Display loading symbol while loading is true
+      <div>
 
-    <div className='header'>
-      <Image
-      src={logo}
-      alt="Banner Image"
-      className='logo'
-      height={55}
-      width={55}
-      />
-      <p id='logoName'>Daily Deals</p>
-    </div>
+      <div className='header'>
+        <Image
+        src={logo}
+        alt="Banner Image"
+        className='logo'
+        height={55}
+        width={55}
+        />
+        <p id='logoName'>Daily Deals</p>
+      </div>
 
-      <ul>
-        <div className='beatslist'>
-
-
-            {articles.map((article) => (
-              <li key={article.id}>
-                {/* structure of the card */} 
-                <div style={{border:"2px solid #8a8a8a", borderRadius:"15px", height:"300px", width:"250px", position:"relative", margin:"20px"}}>
-                    <div style={{height:"70%", display:"flex", justifyContent:"center"}}>
-                        <Image src={article.image} alt='image' width={100} height={100} style={{height:"auto", width:"auto", padding:"20px"}}/>
-                    </div>
-                    <div id='cart'>
-                      <button onClick={() => addToCart(article)} article={article}><AddedNotify/></button>
-                    </div>
-                    <div id='ratings'>
-                    {/* <div id='ratingBackground'>Rating</div> */}
-                    {/* <div id='stars'>{article.rating.rate}</div> */}
-                    </div>
-                    <div id='productName'>{article.title}</div>
-                </div>
-              </li>
-            
-            ))}
+        <ul>
+          <div className='beatslist'>
 
 
-        <div id='goToCart'>
-          <Cart data={cart} onClearCart={clearCart}/>
-        </div>
-        </div>
-      </ul>
+              {articles.map((article) => (
+                <li key={article.id}>
+                  {/* structure of the card */} 
+                  <div style={{border:"2px solid #8a8a8a", borderRadius:"15px", height:"300px", width:"250px", position:"relative", margin:"20px"}}>
+                      <div style={{height:"70%", display:"flex", justifyContent:"center"}}>
+                          <Image src={article.image} alt='image' width={100} height={100} style={{height:"auto", width:"auto", padding:"20px"}}/>
+                      </div>
+                      <div id='cart'>
+                        <button onClick={() => addToCart(article)} article={article}><AddedNotify/></button>
+                      </div>
+                      <div id='ratings'>
+                      {/* <div id='ratingBackground'>Rating</div> */}
+                      {/* <div id='stars'>{article.rating.rate}</div> */}
+                      </div>
+                      <div id='productName'>{article.title}</div>
+                      {/* <div id='quantityProducts'><Quantity/></div> */}
+                  </div>
+                </li>
+              
+              ))}
+
+
+          <div id='goToCart'>
+            <Cart data={cart} onClearCart={clearCart} onRemoveFromCart={removeFromCart}/>
+          </div>
+          </div>
+        </ul>
+      </div>
+    }
     </div>
   );
 }

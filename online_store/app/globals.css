@@ -231,11 +231,13 @@ body::-webkit-scrollbar {
   margin: 30px;
   padding: 20px;
   height: 90vh;
-  overflow: scroll;
   display: flex;
   flex-wrap: wrap;
 
   justify-content: space-evenly;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .beatslist::-webkit-scrollbar {
@@ -334,6 +336,16 @@ body::-webkit-scrollbar {
 #quantity {
   display: grid;
 }
+
+/* #quantityProducts{
+  border: 1px dotted brown;
+  display: flex;
+  position: absolute;
+  bottom: -20px;
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%);
+} */
 
 #title {
   width: 220px;
@@ -451,7 +463,7 @@ body::-webkit-scrollbar {
 
 #decrement, #increment {
   border: none;
-  background-color: none;
+  background-color: white;
   color: #0e0e0e;
   font-size: 20px;
   margin-right: 5px;
@@ -473,7 +485,8 @@ body::-webkit-scrollbar {
 
  .logo {
   border-radius: 100%;
-  margin-left: 20px;
+  position: absolute;
+  left: 20px;
  }
 
  #logoName {
@@ -481,63 +494,43 @@ body::-webkit-scrollbar {
   font-size: 20px;
   margin-left:  10px;
   color: #343434;
+
+  font-family: "Inter-SemiBold", Helvetica;
+  left: 80px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+ }
+
+ #removeButton {
+  background-color: rgb(255, 72, 72);
+  border: none;
+  aspect-ratio: 1/1;
+  color: white;
+  transition: linear 0.1s;
+ }
+
+ #removeButton:hover {
+  scale: 1.2;
+  transition: linear 0.1s;
+ }
+
+ #loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
  }
 
 /* for mobile */
 
 @media (max-width: 440px) {
   #orderConfirmed p {
-    font-size: 24px;
+    font-size: 20px;
   }
 
-  #beatText{
-    font-size: 600%;
-    font-weight: 900;
-    /* left: 150px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  
-     height: auto;
-     width: 80vw;
-     display: flex;
-     align-items: center;
 
-     aspect-ratio: 1/1;
-  }
-
-  #logitechText{
-    font-size: 380%;
-    font-weight: 900;
-    /* left: 150px; */
-    /* right: 50px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  
-    height: auto;
-    width: 80vw;
-    display: flex;
-    align-items: center;
-
-    aspect-ratio: 1/1;
-  }
-
-  #razerText{
-    font-size: 580%;
-    font-weight: 900;
-    /* left: 150px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  
-    height: auto;
-    width: 80vw;
-     display: flex;
-     align-items: center;
-
-     aspect-ratio: 1/1;
-  }
 }
 
 /* for ipad */
@@ -547,81 +540,4 @@ body::-webkit-scrollbar {
     font-size: 28px;
   }
 
-  #beatText{
-    font-size: 1200%;
-    font-weight: 900;
-    /* left: 150px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  
-     height: auto;
-     width: 80vw;
-     display: flex;
-     align-items: center;
-
-     aspect-ratio: 1/1;
-  }
-
-  #beatText text{
-    background: -webkit-linear-gradient(#0e0e0e, #A11B1B);
-    -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     position: absolute;
-     left: 50%;
-     transform: translate(-50%);
-  }
-
-  #logitechText{
-    font-size: 900%;
-    font-weight: 900;
-    /* left: 150px; */
-    /* right: 50px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  
-    height: auto;
-    width: 80vw;
-    display: flex;
-    align-items: center;
-
-    aspect-ratio: 1/1;
-  }
-
-  #logitechText text{
-    background: -webkit-linear-gradient(#171717, #2f31a8);
-    -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-
-     position: absolute;
-     left: 50%;
-     transform: translate(-50%);
-  }
-
-  #razerText{
-    font-size: 1200%;
-    font-weight: 900;
-    /* left: 150px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-  
-    height: auto;
-    width: 80vw;
-     display: flex;
-     align-items: center;
-
-     aspect-ratio: 1/1;
-  }
-
-  #razerText text{
-    background: -webkit-linear-gradient(#171717, #2fa83d);
-    -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-
-     position: absolute;
-     left: 50%;
-     transform: translate(-50%);
-  }
 }

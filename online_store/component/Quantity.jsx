@@ -22,11 +22,13 @@ export default function Quantity(props) {
     });
   }
 
+
   return (
     <div style={{display:"flex", alignItems:"center"}}>
       <Button id="decrement" onClick={decrement}>-</Button>
-      <h1>{count}</h1>
+      <h4>{count}</h4>
       <Button id="increment" onClick={increment}>+</Button>
     </div>
   );
 }
+
