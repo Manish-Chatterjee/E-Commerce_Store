@@ -5,7 +5,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import Alert from '@mui/material/Alert';
 import CheckIcon from '@mui/icons-material/Check';
 import AddedNotify from '../component/AddedNotify';
-import logo from '../public/images/image.png'
+import logo from '../public/images/logo.png'
 import Quantity from '@/component/Quantity';
 import Lottie from "lottie-react";
 import CartLoading from '../app/cartLoading.json'
