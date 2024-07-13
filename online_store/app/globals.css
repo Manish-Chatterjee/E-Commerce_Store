@@ -17,221 +17,8 @@ body::-webkit-scrollbar {
   height: 100vh;
 }
 
-.categoryBar{
-  position: fixed;
-  background: linear-gradient(#000000, #a11b1b00);
 
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  /* border: 1px solid black; */
-  width: 100vw;
-  /* height: 40px; */
-  height: 50vh;
-  text-align: center;
-  /* margin-top: 20px; */
-  padding-top: 50px;
-  padding-right: 40px;
-  z-index: 5;
-}
-
-#allCategories{
-  width: 150px;
-  background-color: #484848;
-  height: 40px;
-  border: none;
-  border-radius: 0%;
-}
-
-#dropdownMenu {
-  background-color: #2b2b2b76;
-  font-size: 22px;
-}
-
-.dropdown-item {
-  color: rgba(174, 174, 174, 0.544);
-}
-
-.dropdown-item:hover {
-  background-color: #3a3a3a76;
-  color: rgb(174,174,174);
-}
-
-#enterKeywords{
-  width: 450px;
-  height: 40px;
-  /* border: 1px solid #484848 */
-}
-#keyword{
-  border-radius: 0%;
-  background: none;
-  color: aliceblue;
-
-  border: 1px solid #484848;
-}
-#keyword::placeholder{
-  color:#575757;
-}
-
-#search{
-  width: 100px;
-  background-color: #c20000;
-  height: 40px;
-  border-radius: 0%;
-  border: none;
-}
-
-.beats{
-  background-color: #A11B1B;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-  height: 100vh;
-  /* border: 2px solid white; */
-}
-
-#beatText{
-  font-size: 1200%;
-  font-weight: 900;
-  left: 150px;
-  position: relative;
-
-   height: 70%;
-   display: flex;
-   align-items: center;
-
-}
-
-#beatText text{
-  background: -webkit-linear-gradient(#0e0e0e, #A11B1B);
-  -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-}
-
-#beatText img{
-  position: absolute;
-  height: 100%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.logitech{
-  background-color: #2f31a8;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-  height: 100vh;
-}
-
-#logitechText{
-  font-size: 1000%;
-  font-weight: 900;
-  /* left: 150px; */
-  right: 50px;
-  position: relative;
-
-  height: 70%;
-  display: flex;
-  align-items: center;
-}
-
-#logitechText text{
-  background: -webkit-linear-gradient(#171717, #2f31a8);
-  -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-}
-
-#logitechText img{
-  position: absolute;
-  height: 100%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.razer{
-  background-color: #2fa83d;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-  height: 100vh;
-}
-
-#razerText{
-  font-size: 1200%;
-  font-weight: 900;
-  left: 150px;
-  position: relative;
-
-   height: 70%;
-   display: flex;
-   align-items: center;
-}
-
-#razerText text{
-  background: -webkit-linear-gradient(#171717, #2fa83d);
-  -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-}
-
-#razerText img{
-  position: absolute;
-  height: 100%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.playButton{
-  font-size: 35px;
-  color: white;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
-}
-
-.music{
-  /* border: 2px solid rgb(255, 255, 255); */
-  position: relative;
-}
-
-.redirect{
-  right: 0;
-  /* border: 1px solid white; */
-  font-size: 35px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  border-radius: 20px 0 0 20px;
-  background-color: rgb(49, 49, 49);
-  color: white;
-
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.redirect:hover{
-  font-size: 46px;
-  height: 180px;
-  border-radius: 30px 0 0 30px;
-}
-
-.headphoneImage{
-  height: auto;
-  width: auto;
-}
-
-.beatslist{
+.products{
   margin: 30px;
   padding: 20px;
   height: 90vh;
@@ -242,9 +29,12 @@ body::-webkit-scrollbar {
 
   overflow-x: hidden;
   overflow-y: scroll;
+
+  max-width: 1280px;
+  margin-inline: auto;
 }
 
-.beatslist::-webkit-scrollbar {
+.products::-webkit-scrollbar {
   display: none;
 }
 
@@ -344,15 +134,6 @@ body::-webkit-scrollbar {
   display: grid;
 }
 
-/* #quantityProducts{
-  border: 1px dotted brown;
-  display: flex;
-  position: absolute;
-  bottom: -20px;
-  z-index: 10;
-  left: 50%;
-  transform: translate(-50%);
-} */
 
 #title {
   width: 220px;
@@ -485,7 +266,7 @@ body::-webkit-scrollbar {
 
 .header {
   height: 60px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   background-color: #a78e7a;
@@ -539,8 +320,6 @@ body::-webkit-scrollbar {
   height: 70%;
   display: flex;
   justify-content: center;
-
-  /* background-color: #166114; */
  }
 
 /* for mobile */

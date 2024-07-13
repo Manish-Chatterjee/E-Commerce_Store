@@ -2,13 +2,9 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { IoCloseSharp } from "react-icons/io5";
-import CloseButton from 'react-bootstrap/CloseButton';
 import Image from 'next/image';
 import Quantity from './Quantity';
-import { ButtonGroup } from 'react-bootstrap';
 import OrderConfirmed from './OrderConfirmed'
-import Products from '../pages/Products'
-import { RemoveFromQueue } from '@mui/icons-material';
 import { FaTrash } from "react-icons/fa";
 
 function OffCanvasExample({ name, onClearCart, onRemoveFromCart, ...props }) {
@@ -22,10 +18,6 @@ function OffCanvasExample({ name, onClearCart, onRemoveFromCart, ...props }) {
   const handleButtonClick = () => {
     setModalShow(true);
   };
-
-
-
-
 
   return (
     <>
@@ -48,7 +40,6 @@ function OffCanvasExample({ name, onClearCart, onRemoveFromCart, ...props }) {
                     <span id='title'>{product.title}</span>
                     <span id='quantity'>
                       <p>Quantity</p>
-                      {/* <p>{product.quantity}</p> */}
                       <Quantity  quantity={product.quantity} id={product.id}/>
                       
                     </span>
@@ -64,7 +55,6 @@ function OffCanvasExample({ name, onClearCart, onRemoveFromCart, ...props }) {
 
           {props.data?.length === 0 ?  <p id='emptyCartText'>Your cart is empty</p> :
             <div className='orderButton'>
-            {/* <Button id='orderButton' onClick={() => {setModalShow(true) && clearCart}}> */}
             <Button id='orderButton' onClick={handleButtonClick}>
               Order Now
             </Button>
@@ -87,9 +77,6 @@ function Cart({data, onClearCart, onRemoveFromCart}) {
 
   return (
     <div>
-      {/* {['end'].map((placement, idx) => (
-        <OffCanvasExample key={idx} placement={placement} name="Cart" />
-      ))} */}
       <OffCanvasExample placement="end" name="Cart" data={data} key={data.id} onClearCart={onClearCart} onRemoveFromCart={onRemoveFromCart}/>
     </div>
   );

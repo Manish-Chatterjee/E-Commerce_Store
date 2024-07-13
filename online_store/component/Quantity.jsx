@@ -6,7 +6,6 @@ export default function Quantity(props) {
 
   
   function increment() {
-    // setCount(prevCount => prevCount+=1);
     setCount(function (prevCount) {
       return (prevCount += 1);
     });

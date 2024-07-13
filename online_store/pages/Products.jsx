@@ -1,12 +1,8 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Cart from '../component/Cart';
-import { TiShoppingCart } from "react-icons/ti";
-import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
 import AddedNotify from '../component/AddedNotify';
 import logo from '../public/images/logo.png'
-import Quantity from '@/component/Quantity';
 import Lottie from "lottie-react";
 import CartLoading from '../app/cartLoading.json'
 import productData from '../data/product.json'
@@ -16,12 +12,9 @@ function Products() {
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true); // Add loading state
 
-  // const [addedNotify, setAddedNotify] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      // const result = await fetch('https://fakestoreapi.com/products');
-      // const data = await result.json();
       setArticles(productData);
       console.log(productData,'product')
       setLoading(false); // Set loading to false once data is fetched
@@ -71,7 +64,7 @@ function Products() {
       </div>
 
         <ul>
-          <div className='beatslist'>
+          <div className='products'>
 
 
               {articles.map((article) => (
@@ -86,14 +79,11 @@ function Products() {
                         <button onClick={() => addToCart(article)} article={article}><AddedNotify/></button>
                       </div>
                       <div id='ratings'>
-                      {/* <div id='ratingBackground'>Rating</div> */}
-                      {/* <div id='stars'>{article.rating.rate}</div> */}
                       </div>
                       <div id='productName'>
                         <span>{article.title}</span>
                         <span style={{backgroundColor:"white", padding:"2px 10px 2px 10px", borderRadius:"50px"}}>${article.price}</span>
                       </div>
-                      {/* <div id='quantityProducts'><Quantity/></div> */}
                   </div>
                 </li>
               
