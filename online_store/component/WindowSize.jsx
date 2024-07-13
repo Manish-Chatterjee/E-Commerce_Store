@@ -1,18 +1,10 @@
 import { useState, useEffect } from 'react';
 
-// Usage
 function WindowSize({ onCallback}) {
   const size = useWindowSize();
   onCallback(size);
-
-  // return (
-  //   <div>
-  //   //   {size.width}px / {size.height}px
-  //   </div>
-  // );
 }
 
-// Hook
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
