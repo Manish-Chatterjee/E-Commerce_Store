@@ -1,4 +1,7 @@
 
+![20676F35-40D5-4C0E-9A2D-4E5940F7CA65](https://github.com/user-attachments/assets/a75f0790-81f0-448c-bafc-0fd6064336d1)
+
+
 <h1 style="text-decoration: none; border-bottom: none; filter:drop-shadow(0 0 5px #dd9638ff); color: #fec286ff; text-align: center; border-block: 5px double; line-height: 60px; border-radius: 10%; margin-bottom: 50px">
 Daily Deals</h1>
 
