@@ -10,15 +10,14 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.App{
+.App {
   justify-content: center;
   display: flex;
   /* background: linear-gradient(#000000, #a11b1b00); */
   height: 100vh;
 }
 
-
-.products{
+.products {
   margin: 30px;
   padding: 20px;
   height: 90vh;
@@ -38,11 +37,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.addToCart{
+.addToCart {
   background-color: rgb(183, 183, 183);
 }
 
-#closeButton{
+#closeButton {
   font-size: 20px;
 }
 
@@ -133,7 +132,6 @@ body::-webkit-scrollbar {
 #quantity {
   display: grid;
 }
-
 
 #title {
   width: 220px;
@@ -250,7 +248,8 @@ body::-webkit-scrollbar {
   border: none;
 }
 
-#decrement, #increment {
+#decrement,
+#increment {
   border: none;
   background-color: white;
   color: #0e0e0e;
@@ -260,7 +259,8 @@ body::-webkit-scrollbar {
   aspect-ratio: 1/1;
 }
 
-#decrement:hover, #increment:hover {
+#decrement:hover,
+#increment:hover {
   background: #acacac;
 }
 
@@ -275,16 +275,16 @@ body::-webkit-scrollbar {
   top: 0;
 }
 
- .logo {
+.logo {
   border-radius: 100%;
   position: absolute;
   left: 20px;
- }
+}
 
- #logoName {
+#logoName {
   font-weight: 600;
   font-size: 24px;
-  margin-left:  10px;
+  margin-left: 10px;
   color: #f7e7d9;
 
   /* font-family: "Inter-SemiBold", Helvetica; */
@@ -294,33 +294,33 @@ body::-webkit-scrollbar {
   line-height: normal;
   position: absolute;
   white-space: nowrap;
- }
+}
 
- #removeButton {
+#removeButton {
   background-color: rgb(255, 72, 72);
   border: none;
   aspect-ratio: 1/1;
   color: white;
   transition: linear 0.1s;
- }
+}
 
- #removeButton:hover {
+#removeButton:hover {
   scale: 1.2;
   transition: linear 0.1s;
- }
+}
 
- #loading {
+#loading {
   display: grid;
   place-items: center;
   height: 100vh;
   width: 100vw;
- }
+}
 
- #productImage {
+#productImage {
   height: 70%;
   display: flex;
   justify-content: center;
- }
+}
 
 /* for mobile */
 
@@ -328,15 +328,12 @@ body::-webkit-scrollbar {
   #orderConfirmed p {
     font-size: 20px;
   }
-
-
 }
 
 /* for ipad */
 
-@media (min-width: 450px) and (max-width:840px) {
+@media (min-width: 450px) and (max-width: 840px) {
   #orderConfirmed p {
     font-size: 28px;
   }
-
 }
