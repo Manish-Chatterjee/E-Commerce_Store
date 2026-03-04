@@ -33,7 +33,7 @@ function OffCanvasExample({
         {name}
       </Button>
       <Offcanvas show={show} onHide={handleClose} {...props}>
-        <Offcanvas.Header>
+        <Offcanvas.Header style={{display: "flex", justifyContent: "space-between"}}>
           <Offcanvas.Title>My Cart</Offcanvas.Title>
           <Button variant="outline-dark" id="closeButton" onClick={handleClose}>
             <IoCloseSharp />

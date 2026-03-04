@@ -77,7 +77,7 @@ function Products() {
           <ul>
             <div className="products">
               {articles.map((article) => (
-                <li key={article.id}>
+                <li key={article.id} style={{ listStyleType: "none" }}>
                   {/* structure of the card */}
                   <Card
                     style={{
@@ -107,17 +107,23 @@ function Products() {
                           alt="image"
                           width={35}
                           height={35}
+                          style={{
+                            height: "auto",
+                            width: "auto",
+                            maxHeight: "35px",
+                            padding: "7px",
+                          }}
                         />
                       </div>
                     </div>
-                    <div id="cart">
-                      <button
-                        onClick={() => addToCart(article)}
-                        article={article}
-                      >
-                        <AddedNotify />
-                      </button>
-                    </div>
+                    {/* <CartStyled> */}
+                    <CartBtnStyled
+                      onClick={() => addToCart(article)}
+                      article={article}
+                    >
+                      <AddedNotify />
+                    </CartBtnStyled>
+                    {/* </CartStyled> */}
                     <div id="ratings"></div>
                     <div id="productName">
                       <span>{article.title}</span>
@@ -159,5 +165,25 @@ const Card = styled.div`
     transform: scale(1.1);
     transition: 100ms linear;
     box-shadow: 0 0 10px gray;
+  }
+`;
+
+const CartBtnStyled = styled.div`
+  background: linear-gradient(120deg, #f8ff91, #ffa748);
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(120deg, #ffa748, #f8ff91);
+    box-shadow: 3px 3px 5px gray;
   }
 `;

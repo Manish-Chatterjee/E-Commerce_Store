@@ -45,8 +45,8 @@ body::-webkit-scrollbar {
   font-size: 20px;
 }
 
-#cart {
-  background: linear-gradient(120deg, #f8ff91, #ffa748);
+/*#cart {
+   background: linear-gradient(120deg, #f8ff91, #ffa748);
   width: 100px;
   height: 50px;
   border-radius: 50px;
@@ -55,8 +55,8 @@ body::-webkit-scrollbar {
   align-items: center;
   position: absolute;
   top: -20px;
-  right: -20px;
-}
+  right: -20px; 
+}*/
 
 #ratings {
   /* border: 1px double grey; */
@@ -269,31 +269,39 @@ body::-webkit-scrollbar {
   width: 100vw;
   display: flex;
   align-items: center;
+  /* justify-content: center; */
+  gap: 20px;
   background-color: #a78e7a;
 
   position: sticky;
   top: 0;
+
+  /* border: 2px dashed red; */
 }
 
 .logo {
   border-radius: 100%;
-  position: absolute;
-  left: 20px;
+  margin-left: 20px;
+  /* border: 2px solid orange; */
 }
 
 #logoName {
   font-weight: 600;
   font-size: 24px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   color: #f7e7d9;
 
   /* font-family: "Inter-SemiBold", Helvetica; */
   font-family: Georgia, serif;
-  left: 80px;
+  /* left: 80px; */
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  /* position: absolute; */
   white-space: nowrap;
+
+  display: flex;
+  height: 100%;
+  align-items: center;
 }
 
 #removeButton {

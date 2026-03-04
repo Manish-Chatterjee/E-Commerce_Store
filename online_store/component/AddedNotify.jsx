@@ -21,14 +21,14 @@ export default function AddedNotify() {
   };
 
   const buttons = (
-    <React.Fragment>
+    <>
       <Box sx={{ display: 'flex', justifyContent: 'center'}}>
         <Button onClick={handleClick({ vertical: 'top', horizontal: 'center' })} style={{background:"none"}}>
           {/* Top-Center */}
           <TiShoppingCart id='cartButton'/>
         </Button>
       </Box>
-    </React.Fragment>
+    </>
   );
 
   return (
