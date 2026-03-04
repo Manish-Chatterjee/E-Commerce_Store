@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 import Cart from "../component/Cart";
 import AddedNotify from "../component/AddedNotify";
 import logo from "../public/images/logo.png";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import CartLoading from "../app/cartLoading.json";
 import productData from "../data/product.json";
 import styled from "styled-components";
+
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+});
 
 function Products() {
   const [articles, setArticles] = useState([]);
